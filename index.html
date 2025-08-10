@@ -74,7 +74,7 @@
             padding: 0.5rem 1rem;
             color: #374151;
             background-color: #f9fafb;
-            border: 2px solid #9ca3af;
+            border: 2px solid #000000; 
             border-radius: 0.5rem;
             transition: all 0.2s;
             box-sizing: border-box; 
@@ -133,7 +133,7 @@
             justify-content: center;
             padding: 0.75rem 1rem;
             border: 1px solid transparent;
-            border-radius: 0.5rem;
+            border-radius: 25px; 
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             font-size: 0.875rem;
             font-weight: 500;
@@ -143,17 +143,17 @@
         }
 
         .submit-btn {
-            background-color: #3b82f6;
+            background-color: #28a745; 
         }
         .submit-btn:hover {
-            background-color: #2563eb;
+            background-color: #218838; 
         }
 
         .reset-btn {
-            background-color: #9a9a9a;
+            background-color: #dc3545; 
         }
         .reset-btn:hover {
-            background-color: #5a6268;
+            background-color: #c82333; 
         }
         
         .footer-text {
@@ -169,6 +169,7 @@
         <div class="sign-in-box">
             <div class="text-center">
                 <h2>Welcome Back!</h2>
+                <p class="subtitle">Sign in to continue your journey</p>
             </div>
             <form>
                 <div>
@@ -184,7 +185,9 @@
                         <input id="remember-me" name="remember-me" type="checkbox">
                         <label for="remember-me" class="remember-label">Remember me</label>
                     </div>
-                    
+                    <div>
+                        <a href="#" class="link">Forgot password?</a>
+                    </div>
                 </div>
                 <div class="button-group">
                     <button type="submit" class="submit-btn">
@@ -199,4 +202,3 @@
     </div>
 </body>
 </html>
-
