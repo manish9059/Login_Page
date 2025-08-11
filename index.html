@@ -3,202 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Simple Sign In</title>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            background-color: #f3f4f6;
-        }
-
-        .container {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-family: sans-serif;
+            background-image: url('https://i.pinimg.com/1200x/ad/8e/62/ad8e6228df17e94ffdb98cedf71fe013.jpg');
             background-size: cover;
             background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
         }
 
-        .sign-in-box {
-            width: 100%;
-            max-width: 28rem; 
-            padding: 2rem; 
-            background-color: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px); 
-            border-radius: 0.75rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(229, 231, 235, 0.3);
-        }
-        
-        .sign-in-box > * + * {
-            margin-top: 1.5rem;
-        }
-        
-        .text-center {
+        .login-container {
+            background: rgba(255, 255, 255, 0.2); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); 
+            border-radius: 16px; 
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
             text-align: center;
         }
 
         h2 {
-            font-size: 1.875rem; 
-            font-weight: 700;
-            color: #000000; 
-            margin: 0;
-            cursor: pointer; 
+            margin-bottom: 20px;
+            cursor: pointer;
+            color: #333; 
         }
-
-        .subtitle {
-            margin-top: 0.5rem;
-            font-size: 0.875rem; 
-            color: #4b5563;
-        }
-        
-        form > * + * {
-            margin-top: 1.5rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #374151;
+        .input-group {
+            margin-bottom: 15px;
             text-align: left;
         }
-
-        input[type="email"],
-        input[type="password"] {
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333; 
+        }
+        input {
             width: 100%;
-            padding: 0.5rem 1rem;
-            color: #374151;
-            background-color: #f9fafb;
-            border: 2px solid #000000; 
-            border-radius: 0.5rem;
-            transition: all 0.2s;
-            box-sizing: border-box; 
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
-
-        input[type="email"]:focus,
-        input[type="password"]:focus {
-            outline: none;
-            box-shadow: 0 0 0 2px #3b82f6;
-            border-color: #3b82f6;
-        }
-        
-        .flex-between {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .flex-center {
-            display: flex;
-            align-items: center;
-        }
-
-        input[type="checkbox"] {
-            height: 1rem;
-            width: 1rem;
-            border-radius: 0.25rem;
-            border-color: #d1d5db;
-            color: #3b82f6;
-        }
-        
-        .remember-label {
-            margin-left: 0.5rem;
-            font-size: 0.875rem;
-            color: #111827;
-        }
-
-        .link {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #3b82f6;
-            text-decoration: none;
-        }
-        .link:hover {
-            color: #2563eb;
-        }
-
         .button-group {
             display: flex;
-            gap: 1rem; 
+            gap: 10px;
         }
-
-        .submit-btn, .reset-btn {
+        button {
             width: 100%;
-            display: flex;
-            justify-content: center;
-            padding: 0.75rem 1rem;
-            border: 1px solid transparent;
-            border-radius: 25px; 
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.2s;
+            color: white;
+            font-weight: bold;
+            border-radius: 50px;
         }
-
         .submit-btn {
-            background-color: #28a745; 
+            background-color: #4CAF50;
         }
-        .submit-btn:hover {
-            background-color: #218838; 
-        }
-
         .reset-btn {
-            background-color: #dc3545; 
+            background-color: #f44336;
         }
-        .reset-btn:hover {
-            background-color: #c82333; 
+        a {
+            color: #0056b3; 
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
         }
-        
-        .footer-text {
-            font-size: 0.875rem;
-            text-align: center;
-            color: #4b5563;
+        a:hover {
+            text-decoration: underline;
         }
-
     </style>
 </head>
 <body>
-    <div class="container" style="background-image: url('https://i.pinimg.com/1200x/05/80/30/058030c0492000be075816adf4e06b61.jpg');">
-        <div class="sign-in-box">
-            <div class="text-center">
-                <h2>Welcome Back!</h2>
-                <p class="subtitle">Sign in to continue your journey</p>
+    <div class="login-container">
+        <h2>Sign In</h2>
+        <form>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
             </div>
-            <form>
-                <div>
-                    <label for="email">Email address</label>
-                    <input type="email" id="email" placeholder="you@example.com">
-                </div>
-                <div>
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="••••••••">
-                </div>
-                <div class="flex-between">
-                    <div class="flex-center">
-                        <input id="remember-me" name="remember-me" type="checkbox">
-                        <label for="remember-me" class="remember-label">Remember me</label>
-                    </div>
-                    <div>
-                        <a href="#" class="link">Forgot password?</a>
-                    </div>
-                </div>
-                <div class="button-group">
-                    <button type="submit" class="submit-btn">
-                        Sign In
-                    </button>
-                    <button type="reset" class="reset-btn">
-                        Reset
-                    </button>
-                </div>
-            </form>
-        </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+            <div style="text-align: right; margin-bottom: 10px;">
+                <a href="#">Forgot password?</a>
+            </div>
+            <div class="button-group">
+                <button type="submit" class="submit-btn">Sign In</button>
+                <button type="reset" class="reset-btn">Reset</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>
